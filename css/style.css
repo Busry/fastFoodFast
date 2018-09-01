@@ -73,7 +73,7 @@ header a:hover{
     background: url('../img/food-table.jpg')no-repeat;
     background-size: cover;
     text-align: center;
-    color: wheat;
+    color: yellowgreen;
     height: 80%;
 }
 
@@ -98,6 +98,11 @@ header a:hover{
     margin-top: 15px;
 }
 #newsletter input[type="email"]{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+#newsletter input[type="password"]{
     padding: 4px;
     height: 25px;
     width: 250px;
