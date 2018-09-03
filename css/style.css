@@ -115,17 +115,16 @@ header a:hover{
     width: 100%;
    align-content: center; 
 }
-containerone form{
+.containerone form{
     padding: 10px;
     margin: 0 25% 0 25%; ;
-    background-color: rgba(53, 66, 72, 0.8); 
+    background-color: rgba(53, 66, 72, 0.75); 
     width: 50%;
     color: white;
     
 }
 .containerone{
-    width: 100%;
-    
+    width: 100%; 
     overflow: hidden;
 }
 
