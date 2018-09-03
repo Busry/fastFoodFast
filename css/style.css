@@ -65,7 +65,7 @@ header nav{
 }
 header a:hover{
     color: #cccccc;
-    font-weight: bold;
+    font-weight:bolder;
 }
 /* Showcase*/
 #showcase{
@@ -88,25 +88,22 @@ header a:hover{
 #newsletter{
     padding: 15px;
     color: white;
-    background-color: #35424a;
+    background-color: #354000;
+    border:2px solid red;
 }
 #newsletter h1{
-    float: left;
+    float: right;
 }
 #newsletter form{
     float: right;
     margin-top: 15px;
 }
-#newsletter input[type="email"]{
+#newsletter input{
     padding: 4px;
     height: 25px;
     width: 250px;
 }
-#newsletter input[type="password"]{
-    padding: 4px;
-    height: 25px;
-    width: 250px;
-}
+
 /*newsletter class*/
 .newsletter{
     padding: 15px;
