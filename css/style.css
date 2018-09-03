@@ -20,6 +20,7 @@ body{
 }
 .button_1{
    height: 38px;
+    width: 250px;
     background: orange;
     border: none;
     padding-left: 20px;
@@ -73,8 +74,10 @@ header a:hover{
     background: url('../img/food-table.jpg')no-repeat;
     background-size: cover;
     text-align: center;
-    color: yellowgreen;
+    color:greenyellow;
     height: 80%;
+    align-content: center;
+    
 }
 
 #showcase h1{
@@ -88,8 +91,8 @@ header a:hover{
 #newsletter{
     padding: 15px;
     color: white;
-    background-color: #354000;
-    border:2px solid red;
+    background-color: yellow;
+    border:solid 2px red;
 }
 #newsletter h1{
     float: right;
@@ -106,16 +109,29 @@ header a:hover{
 
 /*newsletter class*/
 .newsletter{
-    padding: 15px;
+    padding: 5px;
     color: white;
-    background-color: #35424a;
+    
+    width: 100%;
+   align-content: center; 
 }
-.newsletter h1{
+form{
+    padding: 10px;
+    margin: 0 25% 0 25%; ;
+    background-color: rgba(53, 66, 200, 0.4); 
+    width: 50%;
     
 }
-.newsletter form{
-    margin-top: 15px;
+.containerone{
+    width: 100%;
+    
+    overflow: hidden;
 }
+
+.newsletter h4{
+    margin: 5px;width:80%
+}
+.newsletter form{align-content: center;}
 .newsletter input{
     padding: 4px;
     height: 25px;
