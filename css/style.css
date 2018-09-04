@@ -35,7 +35,7 @@ header{
     border-bottom:#e8491d 3px solid;
     
 }
-header a{
+header a, ul a{
     color: aliceblue;
     text-decoration: none;
     text-transform: uppercase;
@@ -64,7 +64,7 @@ header nav{
     color: #e8491d;
     font-weight: bold;
 }
-header a:hover{
+header a:hover,  ul a:hover{
     color: #cccccc;
     font-weight:bolder;
 }
@@ -116,6 +116,14 @@ header a:hover{
    align-content: center; 
 }
 .containerone form{
+    padding: 10px;
+    margin: 0 25% 0 25%; ;
+    background-color: rgba(53, 66, 72, 0.75); 
+    width: 50%;
+    color: white;
+    
+}
+.containerone ul{
     padding: 10px;
     margin: 0 25% 0 25%; ;
     background-color: rgba(53, 66, 72, 0.75); 
