@@ -18,14 +18,35 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// ____________PERMISION HANDLING___________________
+
+//  dependencies
+const permRoutes = require('./api/routes/cors');
+
+// middle ware(req, res_Handler)
+app.use(permRoutes.permision);
+
+
 // ____________ORDERS REQUEST HANDLING______________
 
-// Importingorders route file
+// Importing product route file
 const orderRoutes = require('./api/routes/orders');
 
 // It middle ware(req, res_Handler)
-app.use('/api/v1/orders', orderRoutes);
+app.use('/fastfoodfast/api/v1/orders', orderRoutes);
 
+// ____________HTML files REQUEST HANDLING______________
+
+
+// ____________ERROR HANDLING______________________
+
+// Importing error route file
+const errorRoutes = require('./api/routes/errors');
+
+
+// It middle ware(req, res_Handler)
+app.use(errorRoutes.error1);
+app.use(errorRoutes.error2);
 
 // ____________RETURNING____________________________
 
