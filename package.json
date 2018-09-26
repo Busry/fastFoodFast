@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Busry/fastFoodFast#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "joi": "^13.6.0",
     "morgan": "^1.9.1"
   }
 }

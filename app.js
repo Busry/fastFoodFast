@@ -1,5 +1,6 @@
 
 // {____________DEPENDENCIES___________________
+const Joi = require('joi');
 
 const express = require('express');
 
@@ -16,7 +17,8 @@ app.use(morgan('dev'));
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
+app.use(express.json());
 
 // ____________PERMISION HANDLING___________________
 
