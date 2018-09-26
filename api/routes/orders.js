@@ -56,19 +56,14 @@ router.get('/', (request, response, next) => {
 // POST  "/orders" request handling
 router.post('/', (request, response, next) => {
   
-  // schema
-  const schema = {
-    
-    mealType: Joi.string().min(3).required()
-    
-  }
- // validation with joi
-  const result = Joi.validate(request.body, schema);
+//validate order
+  const {error} =  validateOrder(request.body); //object distructuring
   
-   if ( result.error ) {
+//if invalid return 400-bad rquest
+  if ( error ) {
     response
     .status(400)
-    .send(result.error.details[0].message);
+    .send(error.details[0].message);
      return;
     
   }
@@ -115,14 +110,62 @@ router.get('/:orderId', (request, response, next) => {
 
 // put /:orderId request to update an order
 router.put('/:orderId', (request, response, next) => {
+ // look up the order
+  const id = request.params.orderId;
+  const order = orders.find( c => c.orderId === parseInt(id));
+  
+  //if not existing return 404
+  if (!order) {
+    
+    response
+      .status(404)
+      .send('not found');
+    
+  }
+  
+  //else validate order
+  //const result =  validateOrder(request.body);
+  const {error} =  validateOrder(request.body); //object distructuring
+  
+    //if invalid return 400-bad rquest
+  if ( error ) {
+    response
+    .status(400)
+    .send(error.details[0].message);
+     return;
+    
+  }
+    //else  update the course
+    order.mealType = request.body.mealType;
+    order.quantity = request.body.quantity;
+    order.totalPrice = request.body.totalPrice;
+    order.date = request.body.date;
+    order.time = request.body.time;
+  
+    //And return the updated course
+  
   response
     .status(200)
-    .json({
-      message: 'updated the order status'
-    });
+    .send(order);
 });
 
 // _________________________________________________________
+function validateOrder(order) {
+  const schema = {
+    
+    mealType: Joi.string().min(3).required(),
+    quantity: Joi.number().integer().min(1).max(2013),
+    totalPrice:  Joi.number().integer().min(1).max(2013),
+    date:  Joi.string(),
+    time: Joi.string()
+    
+  };
+ // validation with joi
+  return Joi.validate(order, schema);
+  
+  
+}
+
 //* ********************************************************
 
 module.exports = router;
