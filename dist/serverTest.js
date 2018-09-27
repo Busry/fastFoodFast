@@ -1,31 +1,29 @@
-// _________ Dependency_______________
-import chai from 'chai';
-import server from '../server.js';
-import request from 'supertest';
+'use strict';
 
-var should = chai.should;
+var _chai = require('chai');
 
+var _chai2 = _interopRequireDefault(_chai);
+
+var _server = require('../server.js');
+
+var _server2 = _interopRequireDefault(_server);
+
+var _supertest = require('supertest');
+
+var _supertest2 = _interopRequireDefault(_supertest);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var should = _chai2.default.should;
 
 //____________ GET /orders testing_________________________
 
-describe(
-	"Api testing",
-	() => {
-		it(
-			"test case of call",
-			() => {
-				request(server)
-					.get("http://localhost:2018/api/v1/orders")
-					.set('accept', 'application/json')
-					.expect(200,done)
-			}
-
-		)
-	}
-
-)
-
-
+// _________ Dependency_______________
+describe("Api testing", function () {
+	it("test case of call", function () {
+		(0, _supertest2.default)(_server2.default).get("http://localhost:2018/api/v1/orders").set('accept', 'application/json').expect(200, done);
+	});
+});
 
 // const assert = require('chai').assert;
 // const should = require('chai').should;
@@ -35,7 +33,7 @@ describe(
 
 
 //describe("server", () => {
-	//var server;
+//var server;
 
 //	beforeAll(() => {
 //		server = require("../server");
@@ -44,7 +42,7 @@ describe(
 //		server.close();
 //	});
 
-  	
+
 ////____________ GET /orders testing_________________________
 //
 //  	describe("GET /orders", () => {
@@ -112,7 +110,7 @@ describe(
 //____________ GET /orders/:orderId  testing_________________________
 
 //   	describe("PUT /orders/:orderId", () => {
-      
+
 // 		var data = {};
 
 // //		beforeAll((done) => {
@@ -131,3 +129,4 @@ describe(
 // 			expect(data.body.message).toBe('updated the order status');
 // 		});
 // 	});
+//# sourceMappingURL=serverTest.js.map
