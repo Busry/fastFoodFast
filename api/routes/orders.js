@@ -61,7 +61,7 @@ router.post('/', (request, response, next) => {
   if ( !(request.body.time ||request.body.mealType) ) {
     response
     .status(400)
-    .send("please enter name and mealType");
+    .send("please enter time and mealType");
      return;
     
   }
@@ -127,7 +127,7 @@ router.put('/:orderId', (request, response, next) => {
   if (!(request.body.time ||request.body.mealType) ) {
     response
     .status(400)
-    .send("provide body and meal type");
+    .send("provide time and meal type");
      return;
     
   }
