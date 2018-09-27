@@ -1,5 +1,5 @@
 //_________Dependencies______________________
-const Joi = require('joi');
+//const Joi = require('joi');
 
 const express = require('express');
 
@@ -57,13 +57,11 @@ router.get('/', (request, response, next) => {
 router.post('/', (request, response, next) => {
   
 //validate order
-  const {error} =  validateOrder(request.body); //object distructuring
-  
 //if invalid return 400-bad rquest
-  if ( error ) {
+  if ( !(request.body.time ||request.body.mealType) ) {
     response
     .status(400)
-    .send(error.details[0].message);
+    .send("please enter name and mealType");
      return;
     
   }
@@ -125,13 +123,11 @@ router.put('/:orderId', (request, response, next) => {
   
   //else validate order
   //const result =  validateOrder(request.body);
-  const {error} =  validateOrder(request.body); //object distructuring
-  
     //if invalid return 400-bad rquest
-  if ( error ) {
+  if (!(request.body.time ||request.body.mealType) ) {
     response
     .status(400)
-    .send(error.details[0].message);
+    .send("provide body and meal type");
      return;
     
   }
@@ -150,21 +146,7 @@ router.put('/:orderId', (request, response, next) => {
 });
 
 // _________________________________________________________
-function validateOrder(order) {
-  const schema = {
-    
-    mealType: Joi.string().min(3).required(),
-    quantity: Joi.number().integer().min(1).max(2013),
-    totalPrice:  Joi.number().integer().min(1).max(2013),
-    date:  Joi.string(),
-    time: Joi.string()
-    
-  };
- // validation with joi
-  return Joi.validate(order, schema);
-  
-  
-}
+
 
 //* ********************************************************
 
