@@ -20,7 +20,7 @@ body{
     width: 80%;
     margin: auto;
     overflow: hidden
-   /* background-color: yellowgreen;*/
+  
 }
 .button_1{
    height: 38px;
@@ -59,12 +59,20 @@ header #branding{
 }
 header #branding span h1{
     margin: 0;
+<<<<<<< HEAD
+  font-size: 50px;
+}
+header #branding h4{
+    margin: 0;
+    
+=======
     font-size: 60px;
 }
 header #branding  h4{
     margin: 0;
     font-size: 20px;
     float: right;
+>>>>>>> gh-pages
 }
 header nav{
     float: right;
